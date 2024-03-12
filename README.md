@@ -2,10 +2,6 @@
  A collection of formats made for minecraft mods, such as [sc-peripherals' 3dj](https://docs.sc3.io/features/sc-peripherals.html#_3dj-format) and custom ones for other mods
 
 ## Formats
-- [minecraft-formats](#minecraft-formats)
-  - [Formats](#formats)
-    - [`.3dj`](#3dj)
-    - [`.statue`](#statue)
 
 ### `.3dj`
 A format that was specifically made for [sc-peripherals](https://modrinth.com/mod/sc-peripherals) to be used with their 3D Printers.
