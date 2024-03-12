@@ -1,2 +1,2 @@
-pub mod formats;
 pub mod converters;
+pub mod formats;

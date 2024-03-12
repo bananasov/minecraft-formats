@@ -24,14 +24,13 @@ fn convert_shapes_to_cubes(shapes: Vec<Shape>) -> Vec<Cube> {
             z2: shape.bounds[5],
         };
 
-        let tint = match shape.tint {
-            Some(tint) => Some(u32::from_str_radix(&tint, 16).unwrap()),
-            None => None,
-        };
+        let tint = shape
+            .tint
+            .map(|tint| u32::from_str_radix(&tint, 16).unwrap());
 
         let cube = Cube {
             texture: shape.texture,
-            tint: tint,
+            tint,
             bounds,
         };
 

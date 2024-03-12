@@ -21,10 +21,7 @@ fn convert_cubes_to_shapes(cubes: Vec<Cube>) -> Vec<Shape> {
     let mut shapes = Vec::new();
 
     for cube in cubes {
-        let tint = match cube.tint {
-            Some(tint) => Some(tint.to_string()),
-            None => None,
-        };
+        let tint = cube.tint.map(|tint| tint.to_string());
 
         let shape = Shape {
             bounds: cube.bounds.into(),
