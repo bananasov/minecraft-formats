@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Clone, Debug, Deserialize, Serialize)]
 /// This is equal to the [.2dj](https://docs.sc3.io/features/sc-peripherals.html#_2dj-format) format for sc-peripherals' wide format printer
 pub struct Poster {
     /// The name of the poster, max 48 characters
@@ -18,7 +18,7 @@ pub struct Poster {
     pub height: u8,
 }
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Clone, Debug, Deserialize, Serialize)]
 /// This is equal to the [.2dja](https://docs.sc3.io/features/sc-peripherals.html#_2dja-format) format for sc-peripherals' wide format printer
 pub struct Posters {
     /// The name of the collection of posters, not currently used
