@@ -24,11 +24,17 @@ pub struct Print {
     #[serde(rename = "redstoneLevel")]
     /// The redstone level of the 3D print. Must be between 0 or 15.
     pub redstone_level: Option<i8>,
-    #[serde(rename = "shapesOff")]
+    /// The position of the seat on the 3D print.
+    /// If not null or undefined, must be a array containing three numbers between 0.1 and 0.9,
+    /// e.g. [0.5, 0.5, 0.5], where 0.5 is the center of the block. When not null or undefined,
+    /// the print will be a seat that can be sat on by right-clicking.
+    #[serde(rename = "seatPos")]
+    pub seat_pos: Option<Vec<f32>>,
     /// The shapes of the 3D print when in the `off` state.
     /// Each object in the array must have a `bounds` property with the bounds of the shape,
     /// a `texture` property with the texture of the shape, and an optional `tint` property with the tint of the shape,
     /// which may be a number or a hex string (`RRGGBB)`.
+    #[serde(rename = "shapesOff")]
     pub shapes_off: Vec<Shape>,
     #[serde(rename = "shapesOn")]
     /// Same as `shapes_off`, but for the `on` state. To disallow state changes and have no `on` state, pass an empty array.
@@ -58,6 +64,7 @@ impl Default for Print {
             redstone_level: Default::default(),
             shapes_off: Default::default(),
             shapes_on: Default::default(),
+            seat_pos: None,
         }
     }
 }

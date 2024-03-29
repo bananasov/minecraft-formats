@@ -13,6 +13,7 @@ impl From<Statue> for Print {
             redstone_level: None,
             shapes_off: convert_cubes_to_shapes(value.cubes),
             shapes_on: Vec::new(),
+            seat_pos: None,
         }
     }
 }
